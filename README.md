@@ -814,3 +814,293 @@ There was not sufficient evidence from the network metadata alone to declare a c
 
 Therefore, the appropriate response is to preserve evidence, investigate further, validate the indicators, and avoid making an unsupported conclusion.
 
+## AI-Assisted Investigation & Verification
+
+Generative AI was used throughout the project as an analytical assistant to help examine network traffic, identify patterns, organize findings, and support the development of investigation-focused detection rules.
+
+The AI-assisted approach helped reduce the time required to review large amounts of network traffic and provided additional perspectives for identifying areas that required deeper investigation.
+
+### How AI Was Used
+
+Generative AI assisted with:
+
+- Reviewing structured network traffic data.
+- Identifying frequently communicating IP addresses.
+- Classifying internal and external communication.
+- Examining repeated communication patterns.
+- Investigating frequently used network ports.
+- Highlighting potentially unusual traffic behavior.
+- Reviewing DNS and HTTP activity.
+- Interpreting statistical findings.
+- Supporting detection rule development.
+- Organizing investigation findings.
+- Supporting incident response planning.
+- Helping structure the final security assessment.
+
+### AI and Analyst Verification
+
+AI-generated observations were not treated as final security conclusions.
+
+Important findings were checked against the underlying dataset, calculated statistics, protocol information, and traffic relationships.
+
+This verification was especially important for observations involving:
+
+- Repeated communication
+- External destinations
+- High-volume traffic
+- Unusual ports
+- Large frame sizes
+- DNS activity
+- Potential automated communication
+
+### Limitations of AI-Assisted Analysis
+
+Generative AI can help identify patterns quickly, but it cannot independently establish that a network behavior is malicious without sufficient supporting evidence.
+
+For this investigation, unusual traffic patterns were therefore treated as investigation leads rather than automatically classified as:
+
+- Confirmed malware
+- Command and Control (C2)
+- Data exfiltration
+- DNS tunneling
+- System compromise
+
+### AI Investigation Principle
+
+The project followed the principle:
+
+**AI assists the investigation — the analyst validates the evidence and makes the final security decision.**
+
+This approach combines the speed and analytical capabilities of Generative AI with evidence-based cybersecurity investigation.
+
+## Tools & Technologies
+
+The project used a combination of network analysis, command-line, data analysis, visualization, Generative AI, and documentation tools.
+
+| Tool / Technology | Purpose |
+|---|---|
+| **Wireshark** | PCAP inspection, protocol validation, and network traffic analysis |
+| **TShark** | Command-line PCAP processing and packet metadata extraction |
+| **Python** | Traffic dataset preparation and segment combination |
+| **Microsoft Excel** | Dataset validation, filtering, and statistical review |
+| **Generative AI** | AI-assisted traffic investigation, pattern identification, and analysis support |
+| **GitHub** | Project version control, documentation, and portfolio publication |
+| **Markdown** | Project documentation and README creation |
+
+### Technology Workflow
+
+The main technologies were used at different stages of the investigation:
+
+**Wireshark → TShark → CSV → Python/Pandas → Generative AI → Statistical Analysis → Visualization → Detection Rules → Incident Response**
+
+### Important Note
+
+Python was primarily used for data preparation and combining the three Milestone 2 traffic segments into the complete 3,588-record dataset.
+
+The project also used statistical analysis and visualization techniques to support the interpretation of the network traffic.
+
+## Repository Structure
+
+The repository is organized by milestone to keep the investigation workflow, evidence, analysis outputs, and final deliverables clearly separated.
+
+```text
+PCAP-Threat-Detection-Using-Generative-AI/
+│
+├── Milestone_1_PCAP_Conversion/
+│   ├── 01_Converted_Data/
+│   ├── 02_PCAP_File/
+│   ├── 03_Report_Documentation/
+│   └── 04_Screenshots/
+│
+├── Milestone_2_AI-Assisted_Threat_Analysis/
+│   ├── 01_AI_Analysis_Data/
+│   ├── 02_AI_Prompts_and_Responses/
+│   ├── 03_Attack_Timeline/
+│   ├── 04_Report_Documentation/
+│   └── 05_Screenshots/
+│
+├── Milestone_3_Detection_and_Visualization/
+│   ├── 01_Detection_Rules/
+│   ├── 02_Network_Traffic_Visualization_Report/
+│   ├── 03_AI_Generated_Visuals/
+│   ├── 04_Screenshots/
+│   ├── 05_Source_Data/
+│   ├── 06_Python_Script/
+│   └── 07_Timeline_Analysis_Report/
+│
+├── Milestone_4_Incident_Response_and_Final_Presentation/
+│   ├── 01_Incident_Response_Action_Plan/
+│   ├── 02_Final_Presentation/
+│   └── 03_Reflection_Summary/
+│ 
+│
+└── README.md
+```
+
+
+### Repository Organization
+
+Each milestone contains the documentation and supporting artifacts produced during that stage of the project.
+
+This structure makes it possible to follow the investigation from the original PCAP conversion through AI-assisted analysis, detection and visualization, and finally incident response and project reflection.
+
+### Milestone Folder Purpose
+
+| Folder | Purpose |
+|---|---|
+| `Milestone_1_PCAP_Conversion` | PCAP validation, TShark extraction, and dataset preparation |
+| `Milestone_2_AI-Assisted_Threat_Analysis` | Segmented traffic analysis and AI-assisted investigation |
+| `Milestone_3_Detection_and_Visualization` | Detection rules, statistics, visualizations, and timeline analysis |
+| `Milestone_4_Incident_Response_and_Final_Presentation` | Incident response, final presentation, reflection, and evidence |
+
+## Project Deliverables
+
+The project produced the following technical documentation, datasets, analysis reports, detection rules, visualizations, incident response documentation, and final presentation materials.
+
+| Milestone | Deliverable | Purpose |
+|---|---|---|
+| Milestone 1 | PCAP Conversion Documentation | Documents the PCAP validation and TShark conversion process |
+| Milestone 1 | Sample CSV Dataset | Provides structured network traffic data extracted from the PCAP |
+| Milestone 1 | Validation Workbook | Supports validation and review of the extracted dataset |
+| Milestone 2 | AI-Assisted Analysis Reports | Documents the AI-assisted investigation of the traffic segments |
+| Milestone 2 | Traffic Segments | Contains the three segmented network traffic datasets |
+| Milestone 3 | Detection Rules Report | Documents investigation-focused network detection rules |
+| Milestone 3 | Network Traffic Visualization Report | Documents statistical analysis and network traffic visualizations |
+| Milestone 3 | AI-Generated Visuals | Provides visual representations of investigation findings |
+| Milestone 3 | Timeline Analysis Report | Documents traffic activity and timeline-based investigation |
+| Milestone 3 | Combined Traffic Dataset | Contains the complete 3,588-record dataset |
+| Milestone 3 | Python Data Combination Script | Combines the three Milestone 2 traffic segments |
+| Milestone 4 | Incident Response Action Plan | Documents containment, remediation, recovery, and monitoring recommendations |
+| Milestone 4 | Final Presentation | Summarizes the complete investigation and security findings |
+| Milestone 4 | Reflection Summary | Documents lessons learned and the role of Generative AI |
+| Milestone 4 | Evidence & Visuals | Provides supporting evidence collected throughout the project |
+
+### Final Project Package
+
+The repository brings together the complete project lifecycle:
+
+**PCAP Data → Analysis → Detection → Visualization → Incident Response → Final Assessment**
+
+All major project artifacts are organized within their respective milestone directories for easier review and reference.
+
+## Security Concepts Demonstrated
+
+This project demonstrates several practical cybersecurity and network security concepts through hands-on investigation.
+
+- **PCAP Analysis** — Examining captured network traffic to understand host and protocol behavior.
+- **Network Traffic Analysis** — Investigating communication patterns, ports, protocols, and traffic volume.
+- **IP Address Classification** — Distinguishing internal, public, broadcast, and multicast addresses.
+- **Protocol Analysis** — Identifying and categorizing TCP, TLS, HTTP, DNS, NBNS, SSDP, and ARP traffic.
+- **Port Analysis** — Investigating frequently used TCP and UDP ports and their communication relationships.
+- **External Communication Analysis** — Identifying communication between the internal workstation and public network destinations.
+- **Anomaly Detection** — Using statistical and behavioral observations to identify traffic requiring further investigation.
+- **Beaconing Analysis** — Reviewing repeated communication patterns for possible automated or periodic activity.
+- **DNS Analysis** — Investigating DNS communication and unusual DNS-related frame sizes.
+- **Traffic Timeline Analysis** — Examining how network activity changed throughout the capture period.
+- **Detection Engineering** — Developing investigation-focused detection rules from observed network behaviors.
+- **Security Visualization** — Using visual analysis to communicate network traffic patterns and findings.
+- **Incident Response** — Applying containment, investigation, remediation, recovery, validation, and monitoring concepts.
+- **Generative AI in Cybersecurity** — Using AI to accelerate traffic analysis and organize investigation findings.
+- **Analyst Verification** — Validating AI-generated observations against the underlying evidence before making security decisions.
+- **Evidence-Based Security Assessment** — Distinguishing investigation-relevant indicators from confirmed malicious activity.
+
+## Learning Outcomes
+
+This project provided practical experience in:
+
+- Working with real network packet capture data.
+- Using Wireshark to inspect and validate network traffic.
+- Using TShark to extract structured packet metadata.
+- Preparing and validating network traffic datasets.
+- Using Python and Pandas for traffic data preparation.
+- Applying Generative AI to assist with cybersecurity analysis.
+- Investigating IP addresses, protocols, ports, and communication patterns.
+- Using statistical analysis to identify unusual traffic characteristics.
+- Creating security-focused visualizations.
+- Developing investigation-oriented detection rules.
+- Performing timeline-based network traffic analysis.
+- Translating technical findings into incident response actions.
+- Evaluating AI-generated findings through analyst verification.
+- Understanding the difference between an investigation indicator and confirmed malicious activity.
+- Communicating technical security findings through reports and presentations.
+- Applying an evidence-based approach to cybersecurity investigations.
+
+The project strengthened the ability to combine traditional network security analysis with modern Generative AI-assisted investigation techniques.
+
+## Final Security Assessment
+
+The investigation identified multiple network behaviors that warranted additional security review, including:
+
+- High-volume communication involving the internal workstation `10.10.0.33`.
+- Significant communication with `18.184.26.60`.
+- Frequent TCP/80 traffic.
+- Repeated communication through TCP destination port `53480`.
+- External network communication.
+- Unencrypted HTTP traffic.
+- DNS activity requiring additional validation.
+- Four unusually large DNS-related frame-size observations.
+- A significant traffic burst during the capture timeline.
+- Repeated communication patterns that were reviewed for possible automated activity.
+
+These findings were treated as **investigation-relevant indicators** rather than confirmed malicious activity.
+
+Based on the available PCAP metadata, the investigation did not provide sufficient evidence to confirm:
+
+- Malware execution
+- Command and Control (C2)
+- Data exfiltration
+- DNS tunneling
+- System compromise
+
+Additional endpoint, DNS, firewall, proxy, EDR, application, and authentication evidence would be required to make a definitive determination.
+
+### Final Classification
+
+**INVESTIGATION REQUIRED**
+
+**Confirmed Compromise: No**
+
+The appropriate security response is therefore to preserve the evidence, investigate the identified indicators, validate the activity using additional telemetry, and apply containment or remediation if further evidence confirms malicious behavior.
+
+## Final Takeaway
+
+This project demonstrated how a structured cybersecurity investigation can combine traditional network analysis techniques with Generative AI to investigate suspicious PCAP traffic efficiently.
+
+The investigation showed that AI can help an analyst:
+
+- Process and interpret large amounts of structured traffic data.
+- Identify important communication patterns.
+- Highlight ports, protocols, and destinations requiring investigation.
+- Support statistical and timeline analysis.
+- Assist with detection rule development.
+- Organize technical findings into actionable security recommendations.
+
+At the same time, the project demonstrated that AI-generated observations must be validated against the underlying evidence.
+
+The investigation therefore followed an evidence-based approach in which unusual network behavior was treated as an investigation lead rather than automatically classified as malicious.
+
+> **AI can accelerate cybersecurity investigation, but analyst verification and additional evidence are required before confirming compromise.**
+
+**Final Takeaway: INVESTIGATION REQUIRED**
+
+## Disclaimer
+
+This project was completed for educational and cybersecurity learning purposes as part of a hands-on capstone project.
+
+The network traffic analyzed in this project was used for security investigation and learning purposes. The findings should not be interpreted as definitive proof of malicious activity without additional supporting evidence.
+
+Any security indicators identified in the analysis should be independently validated using appropriate endpoint, network, application, and security monitoring data before taking production security actions.
+
+## Author
+
+**Suraj Somkuwar**
+
+Cybersecurity | Network Security | Threat Detection | Generative AI
+
+GitHub: [surajs-sudo](https://github.com/surajs-sudo)
+
+---
+
+### Capstone Project 4
+
+**AI-Powered PCAP Analysis & Threat Detection**
